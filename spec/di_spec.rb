@@ -14,6 +14,6 @@ end
 
 describe Di do
   it 'Di returns a number 1-6 when rolled' do
-    expect(subject.roll).to eq [1, 2, 3, 4, 5, 6]
+    expect(subject.roll).to be_between(1, 6)
   end
 end
