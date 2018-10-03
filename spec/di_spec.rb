@@ -7,13 +7,19 @@ describe Di do
 end
 
 describe Di do
-  it 'Di responds to roll' do
+  it 'responds to roll' do
     expect(subject).to respond_to :roll
   end
 end
 
 describe Di do
-  it 'Di returns a number 1-6 when rolled' do
+  it 'returns a number 1-6 when rolled' do
     expect(subject.roll).to be_between(1, 6)
+  end
+end
+
+describe Di do
+  it 'returns multiple numbers when called multiple times' do
+    expect(subject.dice(2)).to be_between(1, 12)
   end
 end
