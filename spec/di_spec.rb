@@ -19,7 +19,7 @@ describe Di do
 end
 
 describe Di do
-  it 'returns multiple numbers when called multiple times' do
-    expect(subject.dice(2)).to be_between(1, 12)
+  it 'returns each individual dice roll when rolled multiple times' do
+    expect(subject.dice(2)).to contain_exactly(be_between(1, 6), be_between(1, 6))
   end
 end
