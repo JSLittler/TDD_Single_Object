@@ -6,9 +6,7 @@ class Di
 
   def dice(number)
     all_rolls = []
-    number.times do
-      all_rolls.push(roll)
-    end
+    number.times { all_rolls.push(roll) }
     all_rolls
   end
 
