@@ -1,25 +1,15 @@
 require_relative '../di.rb'
 
 describe Di do
-  it 'should be an instance of a "Di" object' do
-    expect(Di.new).to be_a Di
-  end
-end
 
-describe Di do
-  it 'responds to roll' do
-    expect(subject).to respond_to :roll
-  end
-end
-
-describe Di do
   it 'returns a number 1-6 when rolled' do
-    expect(subject.roll).to be_between(1, 6)
+    roll = subject.roll
+    expect(1 <= roll && roll <= 6).to eq true
   end
-end
 
-describe Di do
   it 'returns each individual dice roll when rolled multiple times' do
-    expect(subject.dice(2)).to contain_exactly(be_between(1, 6), be_between(1, 6))
+    array = subject.dice(2)
+    expect( 1 <= array[0] && array[1] <= 6 ).to eq true
+    expect( 1 <= array[1] && array[1] <= 6 ).to eq true
   end
 end
